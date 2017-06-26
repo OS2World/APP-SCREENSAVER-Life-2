@@ -1,0 +1,13 @@
+NAME LIFE WINDOWAPI NEWFILES
+
+DESCRIPTION 'Life Saver
+Copyright (c) 1993 by Larry Salomon, Jr.
+All rights reserved.'
+
+PROTMODE
+STACKSIZE 0x8000
+
+IMPORTS
+        LIFEHOOK.LIFEINIT
+        LIFEHOOK.LIFETERM
+

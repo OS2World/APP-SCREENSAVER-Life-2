@@ -1,0 +1,41 @@
+ALL:                            LIFE.EXE  \
+                                LIFE.HLP \
+                                LIFEHOOK.DLL
+
+LIFE.EXE:                       LIFE.OBJ \
+                                LIFE.RES
+        LINK386 /MAP /A:16 @<<
+LIFE
+LIFE
+LIFE
+OS2386+CMN32
+LIFE
+<<
+        RC LIFE.RES LIFE.EXE
+
+LIFEHOOK.DLL:                   LIFEHOOK.OBJ
+        LINK386 /MAP /A:16 @<<
+LIFEHOOK
+LIFEHOOK.DLL
+LIFEHOOK
+OS2386
+LIFEHOOK
+<<
+
+LIFE.RES:                       LIFE.RC \
+                                RC.H
+        RC -r LIFE.RC LIFE.RES
+
+LIFE.OBJ:                       LIFE.C \
+                                LIFE.H \
+                                RC.H \
+                                PROTO.H
+        ICC -C+ -Ge+ -Kb+ -Ms -Ss+ -W3 LIFE.C
+
+LIFEHOOK.OBJ:                   LIFEHOOK.C \
+                                LIFE.H
+        ICC -C+ -Ge- -Kb+ -Ms -Ss+ -W3 LIFEHOOK.C
+
+LIFE.HLP:                       LIFE.IPF
+        IPFC LIFE
+

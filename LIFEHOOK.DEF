@@ -1,0 +1,14 @@
+LIBRARY LIFEHOOK
+
+DESCRIPTION 'Life Saver - Input Hook Library
+Copyright (c) 1993 by Larry Salomon, Jr.
+All rights reserved.'
+
+PROTMODE
+STACKSIZE 0x8000
+DATA SINGLE SHARED
+
+EXPORTS
+        LIFEINIT
+        LIFETERM
+
